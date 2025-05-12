@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammed Zakir Portfolio</title>
+
+  <!-- Link to external CSS and JS -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <!-- Page loading spinner -->
+  <div class="spinner-container">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Resume Popup Form -->
+  <div class="popup-form" id="resumePopup">
+    <div class="popup-content">
+      <h3>Enter your details</h3>
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+
+      <!-- Radio buttons for role -->
+      <div class="radio-group">
+        <label><input type="radio" name="role" value="Recruiter" checked> Recruiter</label>
+        <label><input type="radio" name="role" value="Other"> Others</label>
+      </div>
+
+      <!-- Submit and Cancel buttons -->
+      <div class="popup-actions">
+        <button onclick="submitForm()">Submit</button>
+        <button onclick="closeForm()">Cancel</button>
+      </div>
+
+      <!-- Message after form submission -->
+      <p id="formMessage"></p>
+    </div>
+  </div>
+
+  <!-- Main content wrapper -->
+  <div class="page-content">
+    <section class="home-section" id="homesection">
+      <div class="homepage">
+
+        <!-- Navigation + Intro Text -->
+        <div class="container1">
+          <div class="typewriter">
+            <span>ServiceNow Developer | Data Analyst </span>
+            <h2>Mohammed Zakir</h2>
+          </div>
+
+          <!-- Navigation links -->
+          <div class="navigation">
+            <a href="#about">About</a>
+            <a href="#timeline">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+
+            <div class="buttonpop">
+              <button onclick="openForm()">Resume</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main content area -->
+        <div class="container2">
+          <h1>About</h1>
+
+          <!-- About section content -->
+          <div class="about" id="about">
+            <span>Hello, I'm Mohammed Zakir.</span>
+            I'm a ServiceNow Developer with 3 years of hands-on experience in designing, developing, and implementing
+            solutions on the ServiceNow platform.
+            I've worked across key modules including ITSM, FSM, and CSM, and hold certifications in CSA (Certified
+            System Administrator), CAD (Certified Application Developer), and FSM (Field Service Management).
+            As I worked deeper in ServiceNow, I realized that building solutions isn’t just about automation and loading
+            data into platform, it is about understanding insights behind the data. That’s what got me into Data
+            Analytics field. Understanding data with help of Python, EDA ,SQL and Excel provides common patterns and
+            insights
+            for better implementation of solutions to Servicenow platform.
+          </div>
+
+          <!-- Social links -->
+          <div class="socials">
+            <a href="https://github.com/zakir8992" target="_blank">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/mohammed-zakir-26464b165" target="_blank">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
+                alt="LinkedIn">
+            </a>
+          </div>
+
+          <!-- Timeline (Experience) Section -->
+          <h1>Experience</h1>
+          <section class="timeline-container" id="timeline">
+            <div class="timeline">
+              <div class="event">
+                <div class="circle"></div>
+                <div class="content">
+                  <span class="date">OCTOBER 2019 - MARCH 2022</span>
+                  <p>Senior Systems Engineer | Infosys</p>
+                </div>
+              </div>
+              <div class="event">
+                <div class="circle"></div>
+                <div class="content">
+                  <span class="date">AUGUST 2022 - DECEMBER 2023</span>
+                  <p>PG DIPLOMA | Data Science | IIIT Bangalore</p>
+                </div>
+              </div>
+              <div class="event">
+                <div class="circle"></div>
+                <div class="content">
+                  <span class="date">JULY 2024 - JULY 2025</span>
+                  <p>M.Sc | Data Science | LJMU</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Skills Section -->
+          <h1>Skills</h1>
+          <section class="skills-container" id="skills">
+            <!-- Data Analysis Card -->
+            <div class="card-wrapper">
+              <div class="skill-card">
+                <h2>Data Analysis</h2>
+                <div class="skills-grid">
+                  <!-- Skill icons and names -->
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+                    <p>SQL</p>
+                  </div>
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                      alt="Python" />
+                    <p>Python</p>
+                  </div>
+                  <div class="skill-item"><img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019--v1.png"
+                      alt="Excel" />
+                    <p>Excel</p>
+                  </div>
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" />
+                    <p>NumPy</p>
+                  </div>
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" />
+                    <p>Pandas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ServiceNow Development Card -->
+            <div class="card-wrapper">
+              <div class="skill-card">
+                <h2>ServiceNow Development</h2>
+                <div class="skills-grid">
+                  <div class="skill-item"><img src="images/certified-system-administrator.png" alt="ServiceNow" />
+                    <p>CSA</p>
+                  </div>
+                  <div class="skill-item"><img src="images/certified-implementation-specialist-field-service-m.png"
+                      alt="ServiceNow" />
+                    <p>FSM</p>
+                  </div>
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                      alt="HTML" />
+                    <p>HTML</p>
+                  </div>
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                      alt="JavaScript" />
+                    <p>JavaScript</p>
+                  </div>
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                    <p>CSS</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Projects Section -->
+          <h1>Projects:</h1>
+          <section id="projects">
+            <!-- Project 1 -->
+            <div class="card-wrapper">
+              <div class="project-card">
+                <h3>Lead Scoring Case Study</h3>
+                <p>Case study to identify high-potential leads for an ed-tech company that aims to boost its course
+                  conversion rate using machine learning models.</p>
+                <h3>Outcome:</h3>
+                <p>Provided insights to sales efficiency and lead prioritization by providing model that targets
+                  outreach and supports a data-driven sales strategy.</p>
+                <div class="skills">
+                  <span>Python</span><span>NumPy</span><span>Pandas</span><span>Jupyter Notebook</span><span>EDA</span>
+                </div>
+                <div class="socials">
+                  <a href="https://github.com/zakir8992/XEducation_Lead_Scoring_Case_Study/blob/e3a11debfeb62dbd0dbb3c2cfb16d65c3aaeb0d6/01_lead_scoring_case_study_assignment.ipynb"
+                    target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                      alt="GitHub">
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="card-wrapper">
+              <div class="project-card">
+                <h3>ServiceNow FSM capabilities</h3>
+                <p>Outlines out-of-the-box (OOB) capabilities for managing Work Orders in the ServiceNow Field Service
+                  Management (FSM) module</p>
+                <h3>Outcome:</h3>
+                <p>Demonstrated out-of-the-box (OOB) capabilities of Work Order (WO) of
+                  FSM module.Covered WO journey right from its creation to its closure</p>
+                <div class="skills">
+                  <span>FSM</span><span>Business rules</span><span>Automation</span><span>Workflows</span>
+                </div>
+                <div class="socials">
+                  <a href="https://github.com/zakir8992/ServicenNowFSM.git" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                      alt="GitHub">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="certifications">
+            <!-- Certifications Section -->
+            <h1>Certifications</h1>
+
+            <!-- Toggle buttons -->
+            <div class="cert-toggle">
+
+              <button class="cert-btn" onclick="toggleCert('data')">Data Analytics</button>
+              <button class="cert-btn active" onclick="toggleCert('servicenow')">ServiceNow</button>
+            </div>
+
+            <!-- ServiceNow Certificates -->
+            <div id="servicenow" class="cert-section active">
+              <div class="cert">
+                <img src="images/csaz.png" alt="CSA">
+                <h3>Certified System Administrator (CSA)</h3>
+              </div>
+              <div class="cert">
+                <img src="images/fsmz.png" alt="CAD">
+                <h3>Certified implementation Specialist -- Field Service Management (FSM)</h3>
+              </div>
+            </div>
+
+            <!-- Data Analytics Certificates -->
+            <div id="data" class="cert-section">
+              <div class="cert">
+                <a href="https://courses.gfg.skillsnetwork.site/certificates/eea6de947f1245b2972e30899d4fe3dc"
+                  target="_blank">
+                  <img src="images/python for data science.png" alt="Python">
+                </a>
+                <h3>Python for Data Science</h3>
+              </div>
+              <div class="cert">
+                <a href="https://courses.gfg.skillsnetwork.site/certificates/65a88dcc0a05406a9284367421ecb3d3"
+                  target="_blank">
+                  <img src="images/eda with python.png" alt="SQL">
+                </a>
+                <h3>Data Analysis with python</h3>
+              </div>
+              <div class="cert">
+                <img src="images/IIITB.jpg" alt="SQL">
+                <h3>Academic star award for 2023 batch</h3>
+              </div>
+            </div>
+          </section>
+        </div> <!-- End of container2 -->
+      </div> <!-- End of homepage -->
+    </section>
+  </div> <!-- End of page-content -->
+</body>
+
+</html>
