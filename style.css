@@ -1,561 +1,267 @@
-/* ========== ROOT VARIABLES ========== */
-:root {
-  --background-color: #0f172a;
-  --accent-color: #62d84e;
-  --text-color: #f4ecec;
-}
-
-/* ========== GLOBAL STYLES ========== */
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  height: 100%;
-}
-
-.page-content {
-  opacity: 0;
-  transform: translateY(20px) scale(0.98);
-  transition: opacity 1s ease, transform 1s ease;
-  will-change: transform, opacity;
-}
-
-.page-content.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-h1 {
-  color: #00a3ba;
-  padding: 2px;
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-}
-
-/* ========== SPINNER ========== */
-.spinner-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--background-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.spinner {
-  width: 48px;
-  height: 48px;
-  border: 5px solid rgba(255, 255, 255, 0.2);
-  border-top: 5px solid var(--accent-color);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* ========== HOME SECTION (Typewriter + Nav) ========== */
-.typewriter span {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 0;
-  font-size: 20px;
-  animation: typing 4s steps(40, end) forwards, showCursor 0s forwards, hideCursor 0s forwards 4s;
-  color: var(--accent-color);
-}
-
-.typewriter h2 {
-  display: inline-block;
-  width: 60%;
-  text-align: right;
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes showCursor {
-  to { border-right: 2px solid var(--accent-color); }
-}
-
-@keyframes hideCursor {
-  to { border-right: none; }
-}
-
-/* ========== LAYOUT ========== */
-.homepage {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.container1 {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  padding: 2rem;
-  box-sizing: border-box;
-}
-
-.container2 {
-  padding: 2rem;
-  flex: 1;
-  box-sizing: border-box;
-}
-
-/* ========== NAVIGATION ========== */
-.navigation {
-  margin-top: 1rem;
-}
-
-.navigation a {
-  display: block;
-  color: var(--accent-color);
-  text-decoration: none;
-  margin: 0.5rem 0;
-  padding-left: 1.2rem;
-  position: relative;
-}
-
-.navigation a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 10px;
-  height: 2px;
-  background: #4343f9;
-}
-
-.buttonpop {
-  display: flex;
-  justify-content: center;
-}
-
-.buttonpop button {
-  background-color: var(--accent-color);
-  color: black;
-  border-radius: 4px;
-  border: none;
-  padding: 0.5rem 1rem;
-}
-
-/* ========== POPUP FORM ========== */
-.popup-form {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-}
-
-.popup-content {
-  background-color: #131d34;
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  color: white;
-  width: 300px;
-  box-shadow: 0 0 20px var(--accent-color);
-}
-
-.popup-content input {
-  width: 100%;
-  padding: 0.5rem;
-  margin: 0.5rem 0;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.radio-group {
-  display: flex;
-  justify-content: space-around;
-  margin: 0.8rem 0;
-  color: white;
-  font-size: 0.9rem;
-}
-
-.radio-group label {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.popup-actions {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.popup-actions button {
-  padding: 0.5rem 1rem;
-  background: var(--accent-color);
-  border: none;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-#formMessage {
-  margin-top: 0.75rem;
-  font-size: 0.85rem;
-}
-
-/* ========== ABOUT SECTION ========== */
-.about {
-  margin-bottom: 2rem;
-  text-align: justify;
-  
-}
-
-.about span {
-  display: none;
-}
-
-/* ========== SOCIALS ========== */
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.socials img {
-  height: 28px;
-  width: 28px;
-  filter: invert(100%);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.socials img:hover {
-  transform: scale(1.2);
-}
-
-/* ========== TIMELINE ========== */
-.timeline-container {
-  margin-top: 1rem;
-}
-
-.timeline {
-  border-left: 3px dotted var(--accent-color);
-  padding-left: 20px;
-  margin-left: 20px;
-}
-
-.event {
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-.circle {
-  position: absolute;
-  left: -34px;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  background: var(--accent-color);
-  border: 3px solid var(--background-color);
-  border-radius: 50%;
-}
-
-.date {
-  font-size: 1.1rem;
-  color: var(--accent-color);
-  margin-bottom: 3px;
-  display: block;
-}
-
-.content p {
-  margin: 0;
-  font-size: 0.88rem;
-}
-
-/* ========== SKILLS SECTION ========== */
-.skills-container {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 1.5rem;
-  justify-content: space-between;
-}
-
-.card-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 1px;
-  border-radius: 15px;
-  background: linear-gradient(270deg, red, blue, yellow, lime, var(--accent-color));
-  background-size: 800% 800%;
-}
-
-.card-wrapper:hover {
-  animation: borderRotate 4s linear infinite;
-}
-
-@keyframes borderRotate {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
-
-.skill-card,
-.project-card {
-  background-color: #131d34;
-  border-radius: 16px;
-  padding: 1rem;
-  color: white;
-}
-
-.skill-card h2 {
-  color: var(--accent-color);
-  font-size: 1.2rem;
-  border-bottom: 1px solid #555;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-}
-
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.skill-item img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  border-radius: 50%;
-  padding: 4px;
-  background: black;
-}
-
-.skill-item p {
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-}
-
-/* ========== PROJECTS SECTION ========== */
-#projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 1rem;
-  align-items: stretch;
-}
-
-.project-card p {
-  font-size: 0.95rem;
-}
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.skills span {
-  background: var(--accent-color);
-  color: black;
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.8rem;
-}
-
-/* ========== CERTIFICATIONS SECTION ========== */
-.cert-toggle {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.cert-btn {
-  padding: 0.5rem 1.2rem;
-  background: var(--accent-color);
-  color: black;
-  border: none;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.cert-btn.active {
-  background: white;
-  color: var(--accent-color);
-  border: 2px solid var(--accent-color);
-}
-
-.cert-section {
-  display: none;
-}
-
-.cert-section.active {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.cert {
-  text-align: center;
-  max-width: 300px;
-}
-
-.cert img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 2px solid var(--accent-color);
-  background-color: #131d34;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.cert img:hover {
-  transform: scale(1.02);
-}
-
-.cert h3 {
-  margin-top: 0.75rem;
-  color: var(--accent-color);
-  font-size: 1rem;
-}
-
-/* ========== RESPONSIVE STYLES ========== */
-@media screen and (min-width: 769px) {
-  .homepage {
-    flex-direction: row;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .container1 {
-    position: fixed;
-    width: 42%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    overflow-y: auto;
-    z-index: 10;
-  }
-
-  .container2 {
-    margin-left: 42%;
-    width: 58%;
-    height: 100vh;
-    overflow-y: auto;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .homepage {
-    flex-direction: column;
-  }
-
-  .container1 {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-  
-    padding: 0.1rem 1.5rem;
-    border-bottom: 1px solid #333;
-    position: sticky;
-    top: 0; /* distance from top before sticking */
-    z-index: 1000; /* ensure it stays above other elements */
-   /* recommended to avoid transparency issues */
-  }
-
-  .container1 h1 {
-    font-size: 1rem;
-  }
-
-  .typewriter {
-    display: none;
-  }
-
-  .navigation {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 0.5rem;
-    
-  }
-
-  .navigation a {
-    font-size: 0.9rem;
-    padding: 0;
-  }
-
-  .navigation a::before {
-    display: none;
-  }
-
-  .container2 {
-    margin-left: 0;
-    padding: 2rem 1.5rem 2rem;
-    width: 100%;
-  }
-
-  .about span {
-    display: inline-block;
-  }
-
-  .skills-container {
-    flex-direction: column;
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  }
-
-  #projects {
-    grid-template-columns: 1fr;
-  }
-
-  .cert-section.active {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* Offset scroll position slightly below sticky nav */
-#about,
-#skills,
-#projects,
-#timeline,
-#certifications,
-#servicenow,
-#data {
-  scroll-margin-top: 100px; /* adjust if your sticky nav is taller/shorter */
-}
-
-p{
-  text-align:justify;
-}
-
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammed Zakir Portfolio</title>
+
+  <!-- Link to external CSS and JS -->
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Page loading spinner -->
+  <div class="spinner-container">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Resume Popup Form -->
+  <div class="popup-form" id="resumePopup">
+    <div class="popup-content">
+      <h3>Enter your details</h3>
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+
+      <div class="radio-group">
+        <label><input type="radio" name="role" value="Recruiter" checked> Recruiter</label>
+        <label><input type="radio" name="role" value="Other"> Others</label>
+      </div>
+
+      <div class="popup-actions">
+        <button onclick="submitForm()">Submit</button>
+        <button onclick="closeForm()">Cancel</button>
+      </div>
+
+      <p id="formMessage"></p>
+    </div>
+  </div>
+
+  <!-- Main content wrapper -->
+  <div class="page-content">
+    <section class="home-section" id="homesection">
+      <div class="homepage">
+        <div class="container1">
+          <div class="typewriter">
+            <span>ServiceNow Developer | Data Analyst </span>
+            <h2>Mohammed Zakir</h2>
+          </div>
+
+          <div class="navigation">
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            <div class="nav-links" id="navLinks">
+              <a href="#about">About</a>
+              <a href="#timeline">Experience</a>
+              <a href="#skills">Skills</a>
+              <a href="#projects">Projects</a>
+              <a href="#certifications">Certifications</a>
+              <a href="#achievements">Achievements</a>
+              <div class="buttonpop">
+                <button onclick="openForm()">Resume</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container2">
+          <h1>About</h1>
+          <div class="about" id="about">
+            <span>Hello, I'm Mohammed Zakir.</span>
+            I'm a ServiceNow Developer with 3 years of hands-on experience in designing, developing, and implementing
+            solutions on the ServiceNow platform. I've worked across key modules including ITSM, FSM, and CSM, and hold
+            certifications in CSA (Certified System Administrator), CAD (Certified Application Developer), and FSM
+            (Field Service Management). As I worked deeper in ServiceNow, I realized that building solutions isn’t just
+            about automation and loading data into platform, it is about understanding insights behind the data. That’s
+            what got me into Data Analytics field. Understanding data with help of Python, EDA, SQL and Excel provides
+            common patterns and insights for better implementation of solutions to Servicenow platform.
+          </div>
+
+          <div class="socials">
+            <a href="https://github.com/zakir8992" target="_blank">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+            </a>
+            <a href="https://www.linkedin.com/in/mohammed-zakir-26464b165" target="_blank">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
+                alt="LinkedIn">
+            </a>
+          </div>
+
+          <h1>Experience</h1>
+          <section class="timeline-container" id="timeline">
+            <div class="timeline">
+              <div class="event">
+                <div class="circle"></div>
+                <div class="content">
+                  <span class="date">OCTOBER 2019 - MARCH 2022</span>
+                  <p>Senior Systems Engineer | Infosys</p>
+                </div>
+              </div>
+              <div class="event">
+                <div class="circle"></div>
+                <div class="content">
+                  <span class="date">AUGUST 2022 - DECEMBER 2023</span>
+                  <p>PG DIPLOMA | Data Science | IIIT Bangalore</p>
+                </div>
+              </div>
+              <div class="event">
+                <div class="circle"></div>
+                <div class="content">
+                  <span class="date">JULY 2024 - JULY 2025</span>
+                  <p>M.Sc | Data Science | LJMU</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <h1>Skills</h1>
+          <section class="skills-container" id="skills">
+            <div class="card-wrapper">
+              <div class="skill-card">
+                <h2>Data Analysis</h2>
+                <div class="skills-grid">
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
+                    <p>SQL</p>
+                  </div>
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                    <p>Python</p>
+                  </div>
+                  <div class="skill-item"><img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019--v1.png"
+                      alt="Excel">
+                    <p>Excel</p>
+                  </div>
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+                    <p>NumPy</p>
+                  </div>
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg"
+                      alt="Pandas">
+                    <p>Pandas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-wrapper">
+              <div class="skill-card">
+                <h2>ServiceNow Development</h2>
+                <div class="skills-grid">
+                  <div class="skill-item"><img src="images/certified-system-administrator.png" alt="CSA">
+                    <p>CSA</p>
+                  </div>
+                  <div class="skill-item"><img src="images/certified-implementation-specialist-field-service-m.png"
+                      alt="FSM">
+                    <p>FSM</p>
+                  </div>
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                      alt="HTML">
+                    <p>HTML</p>
+                  </div>
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                      alt="JavaScript">
+                    <p>JavaScript</p>
+                  </div>
+                  <div class="skill-item"><img
+                      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS">
+                    <p>CSS</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <h1>Projects:</h1>
+          <section id="projects">
+            <div class="card-wrapper">
+              <div class="project-card">
+                <h3>Lead Scoring Case Study</h3>
+                <p>Case study to identify high-potential leads for an ed-tech company that aims to boost its course
+                  conversion rate using machine learning models.</p>
+                <h3>Outcome:</h3>
+                <p>Provided insights to sales efficiency and lead prioritization by providing model that targets
+                  outreach and supports a data-driven sales strategy.</p>
+                <div class="skills">
+                  <span>Python</span><span>NumPy</span><span>Pandas</span><span>Jupyter Notebook</span><span>EDA</span>
+                </div>
+                <div class="socials">
+                  <a href="https://github.com/zakir8992/XEducation_Lead_Scoring_Case_Study/blob/e3a11debfeb62dbd0dbb3c2cfb16d65c3aaeb0d6/01_lead_scoring_case_study_assignment.ipynb"
+                    target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                      alt="GitHub">
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-wrapper">
+              <div class="project-card">
+                <h3>ServiceNow FSM capabilities</h3>
+                <p>Outlines out-of-the-box (OOB) capabilities for managing Work Orders in the ServiceNow Field Service
+                  Management (FSM) module</p>
+                <h3>Outcome:</h3>
+                <p>Demonstrated out-of-the-box (OOB) capabilities of Work Order (WO) of FSM module. Covered WO journey
+                  right from its creation to its closure</p>
+                <div class="skills">
+                  <span>FSM</span><span>Business rules</span><span>Automation</span><span>Workflows</span>
+                </div>
+                <div class="socials">
+                  <a href="https://github.com/zakir8992/ServicenNowFSM.git" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                      alt="GitHub">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="certifications">
+            <h1>Certifications</h1>
+            <div class="cert-toggle">
+              <button class="cert-btn" onclick="toggleCert('data')">Data Analytics</button>
+              <button class="cert-btn active" onclick="toggleCert('servicenow')">ServiceNow</button>
+            </div>
+
+            <div id="servicenow" class="cert-section active">
+              <div class="cert">
+                <img src="images/csaz.png" alt="CSA">
+                <h3>Certified System Administrator (CSA)</h3>
+              </div>
+              <div class="cert">
+                <img src="images/fsmz.png" alt="CAD">
+                <h3>Certified implementation Specialist -- Field Service Management (FSM)</h3>
+              </div>
+            </div>
+
+            <div id="data" class="cert-section">
+              <div class="cert">
+                <img src="images/python for data science.png" alt="Python">
+                <h3>Python for Data Science</h3>
+              </div>
+              <div class="cert">
+                <img src="images/eda with python.png" alt="certificate">
+                <h3>Data Analysis with python</h3>
+              </div>
+            </div>
+          </section>
+
+          <section id="achievements">
+            <h1>Achievements</h1>
+            <div class="achievement-wrapper">
+              <div class="cert">
+                <img src="images/award.jpg" alt="Award">
+                <h3>Academic star award for 2023 batch</h3>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>
