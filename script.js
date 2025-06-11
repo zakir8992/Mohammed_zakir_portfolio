@@ -84,6 +84,9 @@ function toggleCert(tabId) {
   document.querySelector(`.cert-btn[onclick="toggleCert('${tabId}')"]`).classList.add('active');
 }
 
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
 
   
   
