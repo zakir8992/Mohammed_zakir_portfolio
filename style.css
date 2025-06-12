@@ -29,7 +29,7 @@ html, body {
 
 h1 {
   color: #00a3ba;
-  padding: 2px;
+  padding: 1.8px;
   display: inline-block;
   width: 100%;
   text-align: center;
@@ -220,7 +220,7 @@ h1 {
 
 /* ========== ABOUT SECTION ========== */
 .about {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: justify;
 }
 
@@ -233,7 +233,7 @@ h1 {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1.5rem;
+  
 }
 
 .socials img {
@@ -647,7 +647,7 @@ p {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
+  margin-top: 0.3rem;
 }
 
 /* Responsive mobile fix */
@@ -670,3 +670,4 @@ p {
   max-width: 300px;
   height: auto;
 }
+
