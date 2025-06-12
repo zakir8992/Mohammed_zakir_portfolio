@@ -641,3 +641,32 @@ p {
   pointer-events: none;
   cursor: default;
 }
+
+/* Existing desktop style */
+.achievement-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* Responsive mobile fix */
+@media screen and (max-width: 768px) {
+  .achievement-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .achievement-wrapper .cert {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+.cert img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
