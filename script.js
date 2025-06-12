@@ -88,7 +88,30 @@ function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("active");
 }
 
-  
+// Hamburger toggle
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
+// Auto-close menu when a nav link is clicked (mobile only)
+document.addEventListener("DOMContentLoaded", () => {
+  const navLinks = document.querySelectorAll(".nav-links a");
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        document.getElementById("navLinks").classList.remove("active");
+      }
+    });
+  });
+});
+
+const resumeBtn = document.querySelector(".buttonpop button");
+resumeBtn.addEventListener("click", () => {
+  if (window.innerWidth <= 768) {
+    document.getElementById("navLinks").classList.remove("active");
+  }
+});
+
   
   
   
