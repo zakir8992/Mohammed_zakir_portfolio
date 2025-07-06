@@ -533,13 +533,7 @@ h1 {
     display: inline-block;
   }
 
-  .skills-container {
-    flex-direction: column;
-  }
 
-  .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  }
 
   .skills-container {
     flex-direction: column;
