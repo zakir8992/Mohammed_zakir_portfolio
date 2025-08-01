@@ -5,6 +5,7 @@
   --text-color: #f4ecec;
 }
 
+
 /* ========== GLOBAL STYLES ========== */
 html, body {
   margin: 0;
@@ -77,8 +78,10 @@ h1 {
 
 .typewriter h2 {
   display: inline-block;
-  width: 60%;
+  width: 53%;
   text-align: right;
+  color:#00a3ba;
+
 }
 
 @keyframes typing {
@@ -291,7 +294,7 @@ h1 {
 .skills-container {
   display: flex;
   flex-wrap: nowrap;
-  gap: 1.5rem;
+  gap: 1.8rem;
   justify-content: space-between;
 }
 
@@ -300,7 +303,7 @@ h1 {
   flex-direction: column;
   height: 100%;
   padding: 1px;
-  border-radius: 15px;
+  border-radius: 10px;
   background: linear-gradient(270deg, red, blue, yellow, lime, var(--accent-color));
   background-size: 800% 800%;
 }
@@ -319,8 +322,8 @@ h1 {
   min-height: 260px;
 
   background-color: #131d34;
-  border-radius: 16px;
-  padding: 1rem;
+  border-radius: 10px;
+  padding: 0.9rem;
   color: white;
 }
 
@@ -335,7 +338,7 @@ h1 {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 2.7rem;
 }
 
 .skill-item {
@@ -429,26 +432,42 @@ h1 {
   gap: 2rem;
 }
 
-.cert {
-  text-align: center;
-  max-width: 300px;
+/* Fix certification image sizing */
+.cert img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  margin: 10px auto;
+  display: block;
 }
 
 .cert img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 2px solid var(--accent-color);
-  background-color: #131d34;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  max-width: 380px;
+  width: auto;
+  height: 250px;
+  object-fit: contain;
+  margin: 10px auto;
+  display: block;
+}
+
+/* On smaller screens, reduce the height */
+@media screen and (max-width: 768px) {
+  .cert img {
+    height: 180px;
+  }
 }
 
 
-.cert img:hover {
-  transform: scale(1.02);
+/* Optional: Limit the entire cert card */
+.cert {
+  max-width: 240px;
+  text-align: center;
+  margin: 0 auto;
 }
+
+
+
+
 
 .cert h3 {
   margin-top: 0.75rem;
@@ -574,6 +593,15 @@ h1 {
     flex-direction: column;
     align-items: center;
   }
+  .cert-section.active {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+
 }
 
 /* Offset scroll position slightly below sticky nav */
@@ -663,12 +691,6 @@ p {
   }
 }
 
-.achievement-wrapper {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 1.5rem;
-}
 
 
 .cert img,
@@ -679,27 +701,9 @@ p {
 }
 
 /* Existing desktop style */
-.achievement-wrapper {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 0.3rem;
-}
 
-/* Responsive mobile fix */
-@media screen and (max-width: 768px) {
-  .achievement-wrapper {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0 1rem;
-  }
 
-  .achievement-wrapper .cert {
-    width: 100%;
-    max-width: 320px;
-  }
-}
+
 
 
 
@@ -736,6 +740,15 @@ p {
   padding: 0 16px;
 }
 
+.carousel-container-project {
+  position: relative;
+  width: 106%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .carousel-container {
   position: relative;
   width: 100%;
@@ -743,13 +756,10 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
 }
 
-.carousel-slide {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-}
 
 .carousel-slide .cert {
   flex: 0 0 100%;
@@ -758,11 +768,7 @@ p {
 }
 
 
-.cert {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  text-align: center;
-}
+
 
 .carousel-dots {
   text-align: center;
@@ -788,12 +794,8 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1.5rem 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
+  
 }
 
 
@@ -852,24 +854,11 @@ p {
   height: 24px;
 }
 
-.project-carousel-section {
-  display: none;
-}
-.project-carousel-section.active {
-  display: block;
-}
-
-
-
 
 
 /* Arrows */
 .carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-
+  
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -908,22 +897,57 @@ p {
   display: flex;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  transition: transform 0.5s ease;
+  transition: transform 0.9s ease;
 }
 
 .project-card {
   min-height: 200px;
-
+  
   min-width: 100%;
   max-width: 100%;
   flex: 0 0 100%;
   box-sizing: border-box;
   padding: 0 2rem;
   background: #1e293b;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 2px solid var(--accent-color);
   margin: 0 auto;
   
 }
 
+/* ========== ACHIEVEMENTS SECTION ========== */
+
+.achievement-list {
+  list-style: disc;
+  margin-left: 0;          /* removes default left margin */
+  padding-left: 0.5rem;    /* tighter spacing from edge */
+  max-width: 800px;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+
+
+.achievement-list li::marker {
+  color: var(--accent-color); /* Green accent bullet */
+}
+
+/* ========== LINK STYLING ========== */
+a {
+  color: var(--accent-color);       /* Matches your green accent */
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00ffcc;                   /* Subtle hover color change */
+  text-decoration: none;
+}
+
+#achievements .achievement-list {
+  margin-top: 0.2rem;  /* Reduce gap between <h1> and first <li> */
+}
 
