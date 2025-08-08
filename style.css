@@ -820,9 +820,16 @@ p {
 .project-card h3 {
   color: var(--accent-color);
   font-size: 1.2rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
+  
 }
 
+.project-card h4{
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+  text-align: left;
+}
 .project-card p {
   font-size: 0.9rem;
   color: #d1d5db;
@@ -832,7 +839,8 @@ p {
 .project-card .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 1.0rem;
+  
   margin-top: 0.5rem;
   
 }
