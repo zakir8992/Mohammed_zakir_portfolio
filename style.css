@@ -34,7 +34,7 @@ h1 {
   display: inline-block;
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid white;
+   border-bottom: 1px solid white
 }
 
 /* ========== SPINNER ========== */
@@ -960,3 +960,13 @@ a:hover {
   margin-top: 0.2rem;  /* Reduce gap between <h1> and first <li> */
 }
 
+.socials img[alt="YouTube"] {
+  width: 24px;
+  height: 24px;
+  filter: invert(17%) sepia(100%) saturate(7486%) hue-rotate(358deg) brightness(97%) contrast(110%);
+  transition: transform 0.2s;
+}
+
+.socials img[alt="YouTube"]:hover {
+  transform: scale(1.1);
+}
